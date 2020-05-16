@@ -58,7 +58,7 @@ def agroup(name, tag, c, v, group):
                     ip_address = agent['name']
                     new_list.append(ip_address)
 
-    payload = {"name": str(name), "access_group_type": "MANAGE_ASSETS", "all-users": True, "rules": [{"type": "hostname", "operator": "eq", "terms": new_list}]}
+    payload = {"name": str(name), "access_group_type": "MANAGE_ASSETS", "all-users": True, "rules": [{"type": "IPv4 Address", "operator": "eq", "terms": new_list}]}
 
     answer = check_agroup_exists(str(name))
 
